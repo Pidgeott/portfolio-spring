@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{./index1.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+
+    <div class="left-Side">
+        <div class="profileText">
+            <div class="imgBx">
+                <img src="./image/Matheus.jpg" width="300" height="250">
+            </div>
+            <h2 th:utext="${nome} + '&lt;br/&gt;' + ${cargo}"></h2>
+
+        </div>
+
+
+        <div class="contactInfo">
+            <h3 class="title">Contato</h3>
+            <ul>
+                <li>
+                    <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    <span class="text" th:text="${telefone}"></span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <span class="text" th:text="${email}"></span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                    <span class="text">
+                            <a th:href="${linkedin}" target="_blank" rel="noopener noreferrer">Linkedin</a>
+                        </span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa fa-github" aria-hidden="true"></i></span>
+                    <span class="text">
+                            <a th:href="${github}" target="_blank" rel="noopener noreferrer">Github</a>
+                        </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contactInfo education">
+            <h3 class="title">Formação acadêmica</h3>
+            <ul>
+                <li>
+                    <h4 th:text="${curso1}"></h4>
+                    <h4 th:text="${instituicao1}"></h4>
+                </li>
+                <li>
+                    <h4 th:text="${curso2}"></h4>
+                    <h4 th:text="${instituicao2}"></h4>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contactInfo linguagem">
+            <h3 class="title">Idiomas:</h3>
+            <ul>
+                <li>
+                    <span class="text" th:text="${idiomaNome} + ' - ' + ${idiomaNivel}"></span>
+                    <span class="percent">
+                <div style="width: 45%;"></div>
+            </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+        <div class="right-Side">
+            <div class="about">
+                <h2 class="title2">Sobre mim</h2>
+                <p th:text="${sobreMim}"></p>
+            </div>
+
+
+            <div class="about">
+                <div class="exp-prof">
+                    <h2 class="title2">Experiências profissionais</h2>
+                    <img th:src="@{/image/cielo.jpg}" alt="Imagem Cielo">
+                    <div class="text">
+                        <h3 th:text="${cargo1}"></h3>
+                        <p th:text="${empresa1}"></p>
+                        <p th:text="${periodo1}"></p>
+                    </div>
+                    <p th:text="${descricao1}"></p>
+                </div>
+
+
+                <div class="exp-prof">
+                    <img th:src="@{/image/fleury.jpg}" alt="Imagem Grupo Fleury">
+                    <div class="text">
+                        <h3 th:text="${cargo2}"></h3>
+                        <p th:text="${empresa2}"></p>
+                        <p th:text="${periodo2}"></p>
+                    </div>
+                    <p th:text="${descricao2}"></p>
+                </div>
+
+
+                <div class="exp-prof">
+                    <img th:src="@{/image/gol.jpg}" alt="Imagem GOL">
+                    <div class="text">
+                        <h3 th:text="${cargo3}"></h3>
+                        <p th:text="${empresa3}"></p>
+                        <p th:text="${periodo3}"></p>
+                    </div>
+                    <p th:text="${descricao3}"></p>
+                </div>
+            </div>
+
+
+            <div class="about skills">
+                <h2 class="title2">Competências</h2>
+                <div class="box">
+                    <p th:text="${competencias}"></p>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+</html>
